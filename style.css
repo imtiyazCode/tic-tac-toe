@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #545454;
+    background-color: #ec407a;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.container{
+    background-color: #00acc1;
+    margin: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 1rem;
+}
+.container .title{
+    text-align: center;
+}
+.container .title span{
+    color: #f2ebd3;
+}
+
+.status-action{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    font-size: 25px;
+}
+.status-action .status span{
+    color: #f2ebd3;
+}
+.status-action .reset{
+    cursor: pointer;
+}
+.status-action .reset:hover{
+    color: #f2ebd3;
+}
+
+.game-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #007c91;
+    grid-gap: 15px;
+    margin-top: 3rem;
+}
+.game-grid .game-cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 175px;
+    width: 175px;
+    cursor: pointer;
+    background-color: #00acc1;
+}
+.game-grid .x::after{
+    content: "×";
+    font-size: 13rem;
+    height: 15rem;
+    cursor: default;
+}
+.game-grid .o::after{
+    content: "○";
+    height: 16rem;
+    font-size: 13rem;
+    color: #f2ebd3;
+    cursor: default;
+}
+.game-grid .won{
+    color: red;
+}
+
+@media only screen and (max-width: 1024px){
+    .game-grid{
+        grid-gap: 10px;
+        margin-top: 25px;
+    }
+    .game-grid .game-cell{
+        height: 125px;
+        width: 125px;
+    }
+    .game-grid .x::after{
+        font-size: 9rem;
+        height: 10rem;
+    }
+    .game-grid .o::after{
+        height: 13rem;
+        font-size: 10rem;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .container{
+        margin: 25px;
+        padding: 25px;
+    }
+    .game-grid .game-cell{
+        height: 85px;
+        width: 85px;
+    }
+    .game-grid .x::after{
+        font-size: 7rem;
+        height: 8rem;
+    }
+    .game-grid .o::after{
+        font-size: 8rem;
+        height: 10rem;
+    }
+}
+
+@media only screen and (max-width: 360px){
+    .container{
+        margin: 25px;
+        padding: 10px;
+    }
+    .game-grid .game-cell{
+        height: 70px;
+        width: 70px;
+    }
+    .game-grid .x::after{
+        font-size: 7rem;
+        height: 8rem;
+    }
+    .game-grid .o::after{
+        font-size: 8rem;
+        height: 10rem;
+    }
+}
+
